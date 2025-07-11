@@ -17,3 +17,20 @@ for (let i = 1; i <= 16*16; i++) {
     newDiv.classList.add("divGrid");
     container.appendChild(newDiv);
 }
+
+
+// select the element on the page
+let divArray = document.querySelectorAll("#container > div");
+
+// listen for a new event when mouse is entering the area of the div
+divArray.forEach(div => {
+    div.addEventListener("mouseenter", () => {
+        // change the color of the background of the div
+        // div.classList.add("newBackGroundColor");
+        div.style.backgroundColor = "black";
+    });
+});
+
+
+
+
