@@ -11,9 +11,9 @@ let container = document.querySelector("#container");
 // container.appendChild(newDiv);
 
 // create 10 divs inside the container
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 16*16; i++) {
     const newDiv = document.createElement("div");
-    newDiv.textContent = "div";
+    // newDiv.textContent = "div";
     newDiv.classList.add("divGrid");
     container.appendChild(newDiv);
 }
