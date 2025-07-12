@@ -1,4 +1,13 @@
+#title {
+    margin: 10px;
+}
+
+#numberOfSquares {
+    margin: 10px;
+}
+
 #container {
+    margin: 10px;
     display: flex;
     background-color: grey;
     padding: 0px;
@@ -18,4 +27,3 @@
 .newBackGroundColor{
     background-color: black;
 }
-
