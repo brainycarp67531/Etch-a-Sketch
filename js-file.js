@@ -2,19 +2,6 @@
 let container = document.getElementById("container");
 
 
-// select the element on the page
-let divArray = document.querySelectorAll(".divGrid");
-
-// listen for a new event when mouse is entering the area of the div
-divArray.forEach(div => {
-    div.addEventListener("mouseenter", () => {
-        // change the color of the background of the div
-        // div.classList.add("newBackGroundColor");
-        div.style.backgroundColor = "black";
-    });
-});
-
-
 // function that creates divs inside the container
 function createDivs(count) {
     // clear the container of divs
@@ -23,9 +10,22 @@ function createDivs(count) {
     // generate new divs
     for (let i = 1; i <= count*count; i++) {
         const newDiv = document.createElement("div");
+     
         // newDiv.textContent = "div";
         newDiv.classList.add("divGrid");
-        container.appendChild(newDiv);
+     
+        //calculate the width of the div and update the width of the div
+        let divWidth = 800 / count;
+        newDiv.style.width = divWidth + "px";
+        newDiv.style.height = divWidth + "px";
+     
+        // add hover event listener
+        newDiv.addEventListener('mouseenter', () => {
+            newDiv.style.background = "black";
+        })
+        
+        // add the new div to the container
+        container.appendChild(newDiv);      
     }
 };
 
@@ -45,7 +45,6 @@ numberButton.addEventListener('click', () => {
 
     // update the number of divs, the number represents one side
     createDivs(numberOfSquares);
-
 });
 
 
