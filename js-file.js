@@ -1,6 +1,8 @@
 // select the container element in the page
 let container = document.getElementById("container");
 
+let defaultSize = 16;
+
 
 // function that creates divs inside the container
 function createDivs(count) {
@@ -40,9 +42,16 @@ let numberButton = document.querySelector("#numberOfSquares");
 // get the input from the button
 // open a input field for when clicking on the button
 numberButton.addEventListener('click', () => {
+    // prompt user for size
+    let input = prompt("Number of squares per side (1-100)?");
     // Store the number in a variable
-    let numberOfSquares = prompt("Number of squares?");
-
+    let numberOfSquares = parseInt(input);
+    
+    if (isNaN(numberOfSquares) || numberOfSquares < 1 || numberOfSquares > 100) {
+        alert("Please enter a number between 1 and 100.");
+        return;
+    }
+   
     // update the number of divs, the number represents one side
     createDivs(numberOfSquares);
 });
@@ -53,10 +62,10 @@ let resetButton = document.getElementById("clear");
 
 // event lister for the reset function
 resetButton.addEventListener('click', () => {
-    clearGrid();
+    createDivs(defaultSize);
 });
 
 
 window.onload = () => {
-    createDivs(16);
+    createDivs(defaultSize);
 };
